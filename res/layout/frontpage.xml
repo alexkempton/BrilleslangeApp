@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent" 
+	android:background="#FFFFFFFF" 
+	android:layout_weight="1">
+	<com.google.android.maps.MapView
+        android:id="@+id/mapview"
+        android:layout_width="fill_parent"
+        android:layout_height="300px"
+        android:clickable="true"
+        android:apiKey="0ZK1LP9j9AyoHeriR9RnN8bDyd5TNTpl9JBqCeg"
+    />
+	
+	
+	
+	<Button android:id="@+id/bookalibrarianbutton" 
+		android:text="Bestill en bibliotekar" 
+		android:textSize="10pt"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:layout_weight="1" />
+	<Button android:id="@+id/twitterbutton" android:text="Twitter"
+		android:textSize="10pt" 
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content" 
+		android:layout_weight="1" />
+	<Button android:id="@+id/gotosearchbutton" 
+		android:text="Search"
+		android:textSize="10pt" 
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content" 
+		android:layout_weight="1" />
+	<Button android:id="@+id/findthewaybutton" 
+		android:text="where am i" 
+		android:textSize="10pt"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:layout_weight="1" />
+</LinearLayout>

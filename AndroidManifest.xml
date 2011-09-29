@@ -6,13 +6,18 @@
     <uses-sdk android:minSdkVersion="7" />
 
     <application android:icon="@drawable/icon" android:label="@string/app_name">
-        <activity android:name=".BrilleslangeActivity"
+    <uses-library android:name="com.google.android.maps" />
+        <activity android:name=".activities.FrontPageActivity"
                   android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+ <activity android:name=".activities.TwitterActivity"></activity>
+ <activity android:name=".activities.SearchScreenActivity"></activity>
+ <activity android:name=".activities.SearchResultsActivity"></activity>
+ <activity android:name=".activities.BookALibrarianActivity"></activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 </manifest>
