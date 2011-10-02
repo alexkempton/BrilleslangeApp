@@ -15,13 +15,13 @@
 	
 	
 	
-	<Button android:id="@+id/bookalibrarianbutton" 
+	<Button android:id="@+id/gotobookalibrarianbutton" 
 		android:text="Bestill en bibliotekar" 
 		android:textSize="10pt"
 		android:layout_width="fill_parent" 
 		android:layout_height="wrap_content"
 		android:layout_weight="1" />
-	<Button android:id="@+id/twitterbutton" android:text="Twitter"
+	<Button android:id="@+id/gototwitterbutton" android:text="Twitter"
 		android:textSize="10pt" 
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content" 
@@ -33,7 +33,13 @@
 		android:layout_height="wrap_content" 
 		android:layout_weight="1" />
 	<Button android:id="@+id/findthewaybutton" 
-		android:text="where am i" 
+		android:text="kart" 
+		android:textSize="10pt"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:layout_weight="1" />
+		<Button android:id="@+id/gotofacebookbutton" 
+		android:text="facebook" 
 		android:textSize="10pt"
 		android:layout_width="fill_parent" 
 		android:layout_height="wrap_content"

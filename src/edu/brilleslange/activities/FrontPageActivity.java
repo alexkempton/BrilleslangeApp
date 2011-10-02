@@ -17,9 +17,11 @@ public class FrontPageActivity extends MapActivity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.frontpage);
 
-		Button goToTwitterButton = (Button)findViewById(R.id.twitterbutton);
+		Button goToTwitterButton = (Button)findViewById(R.id.gototwitterbutton);
 		Button goToSearchButton = (Button)findViewById(R.id.gotosearchbutton);
-		Button goToBookALibrarianButton = (Button)findViewById(R.id.bookalibrarianbutton);
+		Button goToBookALibrarianButton = (Button)findViewById(R.id.gotobookalibrarianbutton);
+		Button goToFacebookButton = (Button)findViewById(R.id.gotofacebookbutton);
+		Button goToBuildingMapButton = (Button)findViewById(R.id.findthewaybutton);
 
 		goToTwitterButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
@@ -27,6 +29,14 @@ public class FrontPageActivity extends MapActivity{
 				startActivityForResult(myIntent, 0);
 			}
 		});
+
+		goToBuildingMapButton.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				Intent myIntent = new Intent(view.getContext(), BuildingPlanActivity.class);
+				startActivityForResult(myIntent, 0);
+			}
+		});
+	
 		
 		goToSearchButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
@@ -41,13 +51,19 @@ public class FrontPageActivity extends MapActivity{
 				startActivityForResult(myIntent, 0);
 			}
 		});
+		
+		goToFacebookButton.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				Intent myIntent = new Intent(view.getContext(), FacebookActivity.class);
+				startActivityForResult(myIntent, 0);
+			}
+		});
 
 
 	}
 
-	@Override
+	@Override //Denne må være med når aktiviteten viser et kart
 	protected boolean isRouteDisplayed() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

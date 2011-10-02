@@ -6,7 +6,7 @@
         android:id="@+id/label"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Search here:"/>
+        android:text="Brukernavn:"/>
     <EditText
         android:id="@+id/bookALibrarianUsername"
         android:layout_width="fill_parent"

@@ -18,6 +18,8 @@
  <activity android:name=".activities.SearchScreenActivity"></activity>
  <activity android:name=".activities.SearchResultsActivity"></activity>
  <activity android:name=".activities.BookALibrarianActivity"></activity>
+ <activity android:name=".activities.FacebookActivity"></activity>
+ <activity android:name=".activities.BuildingPlanActivity"></activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 </manifest>
