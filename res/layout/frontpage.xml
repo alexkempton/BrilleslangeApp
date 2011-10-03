@@ -12,15 +12,19 @@
         android:clickable="true"
         android:apiKey="0ZK1LP9j9AyoHeriR9RnN8bDyd5TNTpl9JBqCeg"
     />
-	
-	
-	
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal"
+	android:layout_width="fill_parent"
+	android:layout_height="200px" 
+	android:background="#FFFFFFFF" 
+	android:layout_weight="1">
 	<Button android:id="@+id/gotobookalibrarianbutton" 
 		android:text="Bestill en bibliotekar" 
 		android:textSize="10pt"
 		android:layout_width="fill_parent" 
 		android:layout_height="wrap_content"
 		android:layout_weight="1" />
+		
 	<Button android:id="@+id/gototwitterbutton" android:text="Twitter"
 		android:textSize="10pt" 
 		android:layout_width="fill_parent"
@@ -32,6 +36,8 @@
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content" 
 		android:layout_weight="1" />
+	</LinearLayout>
+	
 	<Button android:id="@+id/findthewaybutton" 
 		android:text="kart" 
 		android:textSize="10pt"

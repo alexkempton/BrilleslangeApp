@@ -41,7 +41,7 @@ public class TwitterActivity  extends ListActivity {
 			JSONArray json = new JSONArray(new JSONObject(responseBody).getString("results"));
 			tweets = new String[json.length()];
 			for(int i = 0;i<json.length();i++){
-				JSONObject t = json.getJSONObject(0);
+				JSONObject t = json.getJSONObject(i);
 				tweets[i] = t.getString("from_user") + ": " + t.getString("text");
 			}
 
