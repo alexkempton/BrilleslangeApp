@@ -42,7 +42,6 @@
 		android:layout_height="wrap_content" 
 		android:layout_weight="1" />
 	</LinearLayout>
-	
 	<Button android:id="@+id/findthewaybutton" 
 		android:text="kart" 
 		android:textSize="10pt"
