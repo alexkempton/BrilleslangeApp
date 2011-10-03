@@ -16,6 +16,7 @@ public class FrontPageActivity extends MapActivity{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.frontpage);
+		
 
 		Button goToTwitterButton = (Button)findViewById(R.id.gototwitterbutton);
 		Button goToSearchButton = (Button)findViewById(R.id.gotosearchbutton);

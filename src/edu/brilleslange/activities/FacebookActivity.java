@@ -85,7 +85,6 @@ public class FacebookActivity extends ListActivity {
 			if(!facebook.isSessionValid()) {
 
 				facebook.authorize(this, new String[] {"user_about_me"}, -1, new DialogListener() {
-					@Override
 					public void onComplete(Bundle values) {
 						SharedPreferences.Editor editor = mPrefs3.edit();
 						editor.putString("access_token4", facebook.getAccessToken());
@@ -94,13 +93,10 @@ public class FacebookActivity extends ListActivity {
 						getFeed();
 					}
 
-					@Override
 					public void onFacebookError(FacebookError error) {}
 
-					@Override
 					public void onError(DialogError e) {}
 
-					@Override
 					public void onCancel() {}
 				});
 			}
