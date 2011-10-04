@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="edu.brilleslange"
-      android:versionCode="1"
-      android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="7" />
+	package="edu.brilleslange" android:versionCode="1" android:versionName="1.0">
+	<uses-sdk android:minSdkVersion="7" />
 
-    <application android:icon="@drawable/icon" android:label="@string/app_name">
-    <uses-library android:name="com.google.android.maps" />
-        <activity android:name=".activities.FrontPageActivity"
-                  android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
- <activity android:name=".activities.TwitterActivity"></activity>
- <activity android:name=".activities.SearchScreenActivity"></activity>
- <activity android:name=".activities.SearchResultsActivity"></activity>
- <activity android:name=".activities.BookALibrarianActivity"></activity>
- <activity android:name=".activities.FacebookActivity"></activity>
- <activity android:name=".activities.BuildingPlanActivity"></activity>
-    </application>
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+	<application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
+		<uses-library android:name="com.google.android.maps" />
+		<activity android:name=".activities.FrontPageActivity"
+			android:label="@string/app_name">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name=".activities.TwitterActivity" />
+		<activity android:name=".activities.SearchScreenActivity" />
+		<activity android:name=".activities.SearchResultsActivity" />
+		<activity android:name=".activities.BookALibrarianActivity" />
+		<activity android:name=".activities.FacebookActivity" />
+		<activity android:name=".activities.BuildingPlanActivity" />
+	</application>
+	<uses-permission android:name="android.permission.INTERNET" />
 </manifest>
