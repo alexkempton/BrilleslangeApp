@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#EEEEEE">
+    <com.google.android.maps.MapView
+        android:id="@+id/mapview"
+        android:layout_width="fill_parent"
+        android:layout_height="300px"
+        android:clickable="true"
+        android:apiKey="0ZK1LP9j9AyoHeriR9RnN8bDyd5TNTpl9JBqCeg"
+    />
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+        android:layout_weight="1"
+        android:divider="#B3B3B3"
+        android:dividerHeight="1px"/>
+</LinearLayout>
+<!-- 
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent" 
@@ -38,3 +60,4 @@
 		android:layout_height="64dip">
 	</ImageButton>
 </LinearLayout>
+-->
