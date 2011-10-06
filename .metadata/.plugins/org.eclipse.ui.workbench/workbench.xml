@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="25" version="2.0">
+<workbench progressCount="22" version="2.0">
 <workbenchAdvisor/>
-<window height="760" width="1024" x="150" y="0">
+<window height="760" maximized="true" width="1024" x="150" y="0">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
 </perspectiveBar>
-<coolbarLayout>
+<coolbarLayout locked="0">
 <coolItem id="group.file" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="160" y="22"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="122" y="22"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
 <coolItem id="adt.actionSet.avdManager" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="adt.actionSet.wizards" itemType="typeToolBarContribution" x="84" y="22"/>
@@ -68,7 +68,6 @@
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter" isEnabled="true"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter" isEnabled="true"/>
 <child filterId="org.eclipse.mylyn.java.ui.MembersFilter" isEnabled="false"/>
-<child filterId="org.eclipse.m2e.MavenModuleFilter" isEnabled="false"/>
 </xmlDefinedFilters>
 </customFilters>
 </viewState>
@@ -84,7 +83,6 @@
 <sort4 sortDirection="1" sortKey="NONE"/>
 <sort5 sortDirection="1" sortKey="NONE"/>
 <sort6 sortDirection="1" sortKey="NONE"/>
-<sort7 sortDirection="1" sortKey="NONE"/>
 </sorter>
 </sorter>
 <filteredTreeFindHistory/>
@@ -110,7 +108,6 @@
 <alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
 <alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
 <alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
-<alwaysOnActionSet id="org.eclipse.wb.core.ui.actionset"/>
 <alwaysOnActionSet id="adt.actionSet.wizards"/>
 <alwaysOnActionSet id="adt.actionSet.refactorings"/>
 <alwaysOnActionSet id="adt.actionSet.avdManager"/>
@@ -241,13 +238,11 @@
 <trimLayout>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
-<trimItem IMemento.internal.id="org.eclipse.mylyn.tasks.ui.trim.container"/>
 </trimArea>
 <trimArea IMemento.internal.id="1024">
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.intro.impl.presentations.IntroLaunchBar"/>
 </trimArea>
 </trimLayout>
 </window>
