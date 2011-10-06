@@ -5,19 +5,19 @@
 
 	<application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
 		<uses-library android:name="com.google.android.maps" />
-		<activity android:name=".activities.FrontPageActivity"
+		<activity android:name=".activities.FrontPageActivity" android:theme="@android:style/Theme.NoTitleBar"
 			android:label="@string/app_name">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		<activity android:name=".activities.TwitterActivity" />
-		<activity android:name=".activities.SearchScreenActivity" />
-		<activity android:name=".activities.SearchResultsActivity" />
-		<activity android:name=".activities.BookALibrarianActivity" />
-		<activity android:name=".activities.FacebookActivity" />
-		<activity android:name=".activities.BuildingPlanActivity" />
+		<activity android:name=".activities.TwitterActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+		<activity android:name=".activities.SearchScreenActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+		<activity android:name=".activities.SearchResultsActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+		<activity android:name=".activities.BookALibrarianActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+		<activity android:name=".activities.FacebookActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+		<activity android:name=".activities.BuildingPlanActivity" android:theme="@android:style/Theme.NoTitleBar"/>
 	</application>
 	<uses-permission android:name="android.permission.INTERNET" />
 </manifest>
