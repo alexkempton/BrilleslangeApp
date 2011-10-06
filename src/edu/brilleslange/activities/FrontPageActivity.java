@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class FrontPageActivity extends MapActivity{
 	/** Called when the activity is first created. */
@@ -18,11 +19,11 @@ public class FrontPageActivity extends MapActivity{
 		setContentView(R.layout.frontpage);
 		
 
-		Button goToTwitterButton = (Button)findViewById(R.id.gototwitterbutton);
-		Button goToSearchButton = (Button)findViewById(R.id.gotosearchbutton);
-		Button goToBookALibrarianButton = (Button)findViewById(R.id.gotobookalibrarianbutton);
-		Button goToFacebookButton = (Button)findViewById(R.id.gotofacebookbutton);
-		Button goToBuildingMapButton = (Button)findViewById(R.id.findthewaybutton);
+		ImageButton goToTwitterButton = (ImageButton)findViewById(R.id.gototwitterbutton);
+		ImageButton goToSearchButton = (ImageButton)findViewById(R.id.gotosearchbutton);
+		ImageButton goToBookALibrarianButton = (ImageButton)findViewById(R.id.gotobookalibrarianbutton);
+		ImageButton goToFacebookButton = (ImageButton)findViewById(R.id.gotofacebookbutton);
+		ImageButton goToBuildingMapButton = (ImageButton)findViewById(R.id.findthewaybutton);
 
 		goToTwitterButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
