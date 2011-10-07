@@ -9,7 +9,7 @@
         android:layout_width="fill_parent"
         android:layout_height="300px"
         android:clickable="true"
-        android:apiKey="0ZK1LP9j9AyoHeriR9RnN8bDyd5TNTpl9JBqCeg"
+        android:apiKey="0ZK1LP9j9Ayqj8QwCzcm7cyofxHs6LdkaB2RyNg"
     />
     <ListView
         android:id="@+id/list"

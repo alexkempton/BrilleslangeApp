@@ -11,6 +11,7 @@ public class MyXMLHandler extends DefaultHandler {
 	Boolean currentElement = false;
 	String currentValue = null;
 	boolean titleElement = false;
+	boolean placementElement = false;
 	public static Records records = null;
 	Record currentRecord;
 
@@ -36,13 +37,19 @@ public class MyXMLHandler extends DefaultHandler {
 		{
 			currentRecord=new Record();
 		} 
+		
 		else if (localName.equals("datafield") && uri.equals("info:lc/xmlns/marcxchange-v1")) {
 			if(attributes.getValue("tag").compareTo("245")==0){
 				titleElement=true;
-				
+			}
+			
+			else if(attributes.getValue("tag").compareTo("852")==0){
+				placementElement=true;
 			}
 			
 		}
+		
+		
 		
 	}
 
@@ -72,7 +79,22 @@ public class MyXMLHandler extends DefaultHandler {
 			}
 			
 		}
-			
+//		else if (placementElement==true)
+//		{
+//			if(localName.equals("subfield") && uri.equals("info:lc/xmlns/marcxchange-v1")){
+//				if(currentRecord.placement!=null){
+//					currentRecord.placement=currentRecord.placement+" " + currentValue + "\n";
+//				}
+//				else{
+//					currentRecord.title=currentValue;
+//				}
+//			}
+//			if(localName.equals("datafield") && uri.equals("info:lc/xmlns/marcxchange-v1")){
+//				titleElement=false;
+//			}
+//			
+//		}
+//			
 		
 
 	}
