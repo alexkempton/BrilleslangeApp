@@ -18,6 +18,7 @@
 		<activity android:name=".activities.BookALibrarianActivity" android:theme="@android:style/Theme.NoTitleBar"/>
 		<activity android:name=".activities.FacebookActivity" android:theme="@android:style/Theme.NoTitleBar"/>
 		<activity android:name=".activities.BuildingPlanActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+		<activity android:name=".activities.BookResultActivity" android:theme="@android:style/Theme.NoTitleBar"/>
 	</application>
 	<uses-permission android:name="android.permission.INTERNET" />
 </manifest>
