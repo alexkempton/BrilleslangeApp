@@ -13,36 +13,17 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class SearchResultsActivity extends Activity {
-	ListView list;
-//	SearchResultsAdapter adapt;
-	ArrayAdapter adapt;
-	
+public class BookResultActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.searchresults);
 		Bundle extras = getIntent().getExtras(); 
-		String value = "";
+		Record r;
 		if(extras !=null) {
-			value = extras.getString("SearchString");
+			r = (Record) getIntent().getSerializableExtra("Record");
+
 		}
-
-		BibsysBridge bibsys = new BibsysBridge();
-
-		
-//		adapt = new SearchResultsAdapter(this,results);
-		ArrayList<Record> results = bibsys.search(value);
-		ArrayList<String> l = new ArrayList<String>();
-		for(Record r : results){
-			l.add(r.title);
-		}
-		
-		adapt = new ArrayAdapter(this,R.layout.searchresultsitem,l);
-		list = (ListView)findViewById(R.id.searchresultslist);
-		list.setAdapter(adapt);
-		list.setTextFilterEnabled(true);
-
 
 
 
