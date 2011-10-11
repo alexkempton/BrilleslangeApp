@@ -1,7 +1,6 @@
 package edu.brilleslange.activities;
 
 import edu.brilleslange.R;
-import edu.brilleslange.R.layout;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

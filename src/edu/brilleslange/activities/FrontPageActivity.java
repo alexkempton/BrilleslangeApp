@@ -18,7 +18,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
-public class FrontPageActivity extends MapActivity implements Runnable {
+public class FrontPageActivity extends MapActivity {
 	
 	ListView list;
 	LaztAdapter adapt;
@@ -61,50 +61,6 @@ public class FrontPageActivity extends MapActivity implements Runnable {
 		});
 		
 		
-/*
-		ImageButton goToTwitterButton = (ImageButton)findViewById(R.id.gototwitterbutton);
-		ImageButton goToSearchButton = (ImageButton)findViewById(R.id.gotosearchbutton);
-		ImageButton goToBookALibrarianButton = (ImageButton)findViewById(R.id.gotobookalibrarianbutton);
-		ImageButton goToFacebookButton = (ImageButton)findViewById(R.id.gotofacebookbutton);
-		ImageButton goToBuildingMapButton = (ImageButton)findViewById(R.id.findthewaybutton);
-
-
-		goToTwitterButton.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View view) {
-				Intent myIntent = new Intent(view.getContext(), TwitterActivity.class);
-				startActivityForResult(myIntent, 0);
-			}
-		});
-
-		goToBuildingMapButton.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View view) {
-				Intent myIntent = new Intent(view.getContext(), BuildingPlanActivity.class);
-				startActivityForResult(myIntent, 0);
-			}
-		});
-	
-		
-		goToSearchButton.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View view) {
-				Intent myIntent = new Intent(view.getContext(), SearchScreenActivity.class);
-				startActivityForResult(myIntent, 0);
-			}
-		});
-		
-		goToBookALibrarianButton.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View view) {
-				Intent myIntent = new Intent(view.getContext(), BookALibrarianActivity.class);
-				startActivityForResult(myIntent, 0);
-			}
-		});
-		
-		goToFacebookButton.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View view) {
-				Intent myIntent = new Intent(view.getContext(), FacebookActivity.class);
-				startActivityForResult(myIntent, 0);
-			}
-		});
-		*/
 
 
 	}
@@ -116,16 +72,7 @@ public class FrontPageActivity extends MapActivity implements Runnable {
 	}
 
 
-	@Override
-	public void run() {
-		try {
-			wait(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} finally {
-			controller.zoomInFixing(0, 0);
-		}
-		
-	}
+
+	
 
 }
