@@ -13,6 +13,3 @@ public class Records {
 	}
 }
 
-class Record{
-	public String title;
-}

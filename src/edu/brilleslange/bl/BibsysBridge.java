@@ -10,7 +10,7 @@ import org.xml.sax.XMLReader;
 import edu.brilleslange.bl.MyXMLHandler;
 
 public class BibsysBridge {
-	public ArrayList<String> search(String title){
+	public ArrayList<Record> search(String title){
 		try {
 			SAXParserFactory spf = SAXParserFactory.newInstance();
 			SAXParser sp = spf.newSAXParser();
@@ -25,13 +25,10 @@ public class BibsysBridge {
 		} catch (Exception e) {
 		}
 
-		Records records = MyXMLHandler.records;
-		ArrayList<String> words = new ArrayList<String>();
-		for(Record r : records.getRecord()){
-			words.add(r.title);
-		}
+		ArrayList<Record> records = MyXMLHandler.records.getRecord();
+		
 
-		return words;
+		return records;
 	}
 }
 
