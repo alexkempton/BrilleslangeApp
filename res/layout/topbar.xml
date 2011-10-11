@@ -6,12 +6,35 @@
   android:layout_height="wrap_content">
     
    <ImageView
+   		android:id="@+id/bg"
     	android:layout_width="fill_parent"
     	android:layout_height="45dp"
     	android:layout_alignParentTop="true" 
-    	android:src="@drawable/top_bar_placeholder"
-    	android:scaleType="centerInside">
+    	android:background="@drawable/top_bar" />
     	
-   </ImageView>
+   <ImageView
+    	android:layout_height="45dp"
+    	android:layout_width="45dp"
+    	android:layout_alignParentTop="true" 
+    	android:src="@drawable/logo_bar"
+		android:scaleType="centerInside"
+    	android:layout_alignLeft="@id/bg" />
+    	
+   <ImageView
+    	android:layout_height="45dp"
+    	android:layout_width="wrap_content"
+    	android:layout_alignParentTop="true"
+    	android:src="@drawable/title_bar"
+		android:scaleType="centerInside"
+    	android:layout_alignLeft="@id/bg" />
+    	
+   <Button
+    	android:layout_height="45dp"
+    	android:layout_width="45dp"
+    	android:layout_alignParentTop="true"
+    	android:background="@drawable/info_bar"
+		android:scaleType="centerInside"
+    	android:layout_alignRight="@id/bg" />
+    	
     
 </RelativeLayout>
