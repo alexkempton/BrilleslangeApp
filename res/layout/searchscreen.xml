@@ -33,12 +33,10 @@
        
    <!-- <SlidingDrawer
      	android:id="@+id/drawer"
-     	android:layout_width="fill_parent"
+       	android:layout_width="fill_parent"
      	android:layout_height="200dp"
-
-	     android:handle="@+id/handle"
-    	 android:content="@+id/content">
-
+	    android:handle="@+id/handle"
+    	android:content="@+id/content" >
      <Button
          android:id="@id/handle"
          android:layout_below="@id/entry"
