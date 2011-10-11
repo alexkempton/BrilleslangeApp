@@ -30,7 +30,8 @@
         android:layout_marginLeft="10dip"
         android:text="  Search  " />
        
-   <SlidingDrawer
+       
+   <!-- <SlidingDrawer
      	android:id="@+id/drawer"
      	android:layout_width="fill_parent"
      	android:layout_height="200dp"
@@ -59,4 +60,21 @@
          	</RelativeLayout>
  </SlidingDrawer>
     
+     -->
+      <ProgressBar
+      	android:id="@+id/progressbar"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@id/entry"
+         />
+         
+     <ListView
+        android:id="@+id/searchresultslist"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+        android:layout_weight="1"
+        android:divider="#B3B3B3"
+        android:dividerHeight="1px"
+        android:layout_below="@id/searchbutton"
+        />
 </RelativeLayout>

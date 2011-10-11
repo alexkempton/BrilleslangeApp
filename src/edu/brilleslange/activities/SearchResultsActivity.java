@@ -15,8 +15,9 @@ import android.widget.ListView;
 
 public class SearchResultsActivity extends Activity {
 	ListView list;
-	SearchResultsAdapter adapt;
-
+//	SearchResultsAdapter adapt;
+	ArrayAdapter adapt;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -29,10 +30,18 @@ public class SearchResultsActivity extends Activity {
 
 		BibsysBridge bibsys = new BibsysBridge();
 
+		
+//		adapt = new SearchResultsAdapter(this,results);
 		ArrayList<Record> results = bibsys.search(value);
+		ArrayList<String> l = new ArrayList<String>();
+		for(Record r : results){
+			l.add(r.title);
+		}
+		
+		adapt = new ArrayAdapter(this,R.layout.searchresultsitem,l);
 		list = (ListView)findViewById(R.id.searchresultslist);
-		adapt = new SearchResultsAdapter(this,results);
 		list.setAdapter(adapt);
+		list.setTextFilterEnabled(true);
 
 
 
