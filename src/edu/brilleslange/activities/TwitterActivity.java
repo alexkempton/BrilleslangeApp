@@ -13,19 +13,22 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.brilleslange.R;
+import android.app.Activity;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-public class TwitterActivity  extends ListActivity {
+public class TwitterActivity  extends Activity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setListAdapter((ListAdapter) new ArrayAdapter<String>(this, R.layout.list_item, getTweets()));
-		ListView lv = getListView();
+		setContentView(R.layout.twitter);
+		
+		ListView lv = (ListView)findViewById(R.id.twitterlist);
+		lv.setAdapter(new ArrayAdapter<String>(this, R.layout.list_item, getTweets()));
 		lv.setTextFilterEnabled(true);
 
 	}

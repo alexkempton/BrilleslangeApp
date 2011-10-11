@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:background="#cd2b2d" >
+    
+    <TextView 
+    	android:id="@+id/advancedText"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text="Avansert Søk:"
+    	android:textColor="#FFFFFF"
+    	android:textSize="16dp"
+    	android:layout_marginLeft="10dp"
+    	android:layout_marginTop="4dp" />
+    	
+    <EditText 
+    	android:id="@+id/advancedTextField" 
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_marginLeft="6dp"
+    	android:layout_marginRight="6dp"
+    	android:layout_below="@id/advancedText" />
+    	
+    <TextView 
+    	android:id="@+id/fromYearText"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text="Fra:"
+    	android:textColor="#FFFFFF"
+    	android:textSize="16dp"
+    	android:layout_marginLeft="10dp"
+    	android:layout_marginTop="4dp"
+    	android:layout_below="@+id/advancedTextField" />
+    	
+    <EditText 
+    	android:id="@+id/fromYearTextField" 
+    	android:layout_width="150dp"
+    	android:layout_height="wrap_content"
+    	android:layout_marginLeft="6dp"
+    	android:layout_marginRight="6dp"
+    	android:layout_below="@id/fromYearText"/>
+    	
+    	
+    <EditText 
+       	android:id="@+id/toYearTextField" 
+    	android:layout_width="150dp"
+    	android:layout_height="wrap_content" 
+    	android:layout_toRightOf="@id/fromYearTextField" 
+    	android:layout_marginLeft="6dp"
+    	android:layout_marginRight="6dp"
+    	android:layout_alignBaseline="@id/fromYearTextField"/>    
+    		
+    <TextView 
+    	android:id="@+id/toYearText"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text="Til:"
+    	android:textColor="#FFFFFF"
+    	android:textSize="16dp"
+    	android:layout_marginLeft="2dp"
+    	android:layout_alignBaseline="@id/fromYearText"
+    	android:layout_alignLeft="@id/toYearTextField"/>
+    	
+
+    <TextView 
+    	android:id="@+id/languageText"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text="Språk:"
+    	android:textColor="#FFFFFF"
+    	android:textSize="16dp"
+    	android:layout_marginLeft="10dp"
+    	android:layout_marginTop="4dp"
+    	android:layout_below="@id/fromYearTextField" />
+    	
+    <Spinner 
+    	android:id="@+id/languageSpinner" 
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content" 
+    	android:layout_marginLeft="6dp"
+    	android:layout_marginRight="6dp"
+    	android:layout_below="@id/languageText" />
+    	
+    	
+    <TextView 
+    	android:id="@+id/sortingText"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text="Sortering:"
+    	android:textColor="#FFFFFF"
+    	android:textSize="16dp"
+    	android:layout_marginLeft="10dp"
+    	android:layout_marginTop="4dp"
+    	android:layout_below="@id/languageSpinner" />
+    	
+    <Spinner 
+    	android:id="@+id/sortingSpinner" 
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content" 
+    	android:layout_marginLeft="6dp"
+    	android:layout_marginRight="6dp"
+    	android:layout_below="@id/sortingText" />
+    	
+    	
+    <TextView 
+    	android:id="@+id/searchText"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text="Søk:"
+    	android:textColor="#FFFFFF"
+    	android:textSize="16dp"
+    	android:layout_marginLeft="10dp"
+    	android:layout_marginTop="4dp"
+    	android:layout_below="@id/sortingSpinner" />
+    	
+    <EditText 
+    	android:id="@+id/searchTextField" 
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content" 
+    	android:layout_marginLeft="6dp"
+    	android:layout_marginRight="6dp"
+    	android:layout_below="@id/searchText" />
+    	
+	<ImageButton 
+		android:id="@+id/advancedButton"
+		android:layout_width="160dp"
+		android:layout_height="wrap_content" 
+		android:layout_margin="5dp"
+		android:layout_below="@id/searchTextField" />
+		
+	<ImageButton 
+		android:id="@+id/searchButton"
+		android:layout_width="100dp"
+		android:layout_height="wrap_content" 
+		android:layout_below="@id/searchTextField"
+		android:layout_margin="5dp"
+		android:layout_alignParentRight="true" />
+		
+</RelativeLayout>

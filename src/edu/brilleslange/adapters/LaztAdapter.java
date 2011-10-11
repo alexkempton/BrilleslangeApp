@@ -31,7 +31,7 @@ public class LaztAdapter extends BaseAdapter {
         menuTxt[1] = "Ukens artikkel";
         menuTxt[2] = "Lik biblioteket";
         menuTxt[3] = "Finn frem";
-        menuTxt[4] = "S¿k";
+        menuTxt[4] = "SÃ¸k";
         menuTxt[5] = "#Realfagsbiblioteket";
     }
 
