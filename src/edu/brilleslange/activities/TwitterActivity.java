@@ -30,7 +30,6 @@ public class TwitterActivity  extends Activity {
 		ListView lv = (ListView)findViewById(R.id.twitterlist);
 		lv.setAdapter(new ArrayAdapter<String>(this, R.layout.list_item, getTweets()));
 		lv.setTextFilterEnabled(true);
-
 	}
 
 	private String[] getTweets(){
