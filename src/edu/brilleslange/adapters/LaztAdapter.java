@@ -27,11 +27,11 @@ public class LaztAdapter extends BaseAdapter {
         data[3] = R.drawable.map;
         data[4] = R.drawable.search;
         data[5] = R.drawable.twitter;
-        menuTxt[0] = "Book en bibliotekar";
+        menuTxt[0] = "Bestill en bibliotekar";
         menuTxt[1] = "Ukens artikkel";
-        menuTxt[2] = "Lik biblioteket";
-        menuTxt[3] = "Finn frem";
-        menuTxt[4] = "Søk";
+        menuTxt[2] = "Hva skjer på biblioteket?";
+        menuTxt[3] = "Finn i bygget";
+        menuTxt[4] = "Søk etter litteratur";
         menuTxt[5] = "#Realfagsbiblioteket";
     }
 
