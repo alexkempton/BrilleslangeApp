@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
-	<classpathentry kind="lib" path="lib/commons-codec-1.5.jar"/>
-	<classpathentry kind="lib" path="lib/scribe-1.2.1.jar"/>
-<<<<<<< HEAD
-	<classpathentry kind="src" path="com_facebook_android_src"/>
-=======
->>>>>>> 8360d188313b718a93aedc08732b6c72fb9a53d1
-	<classpathentry kind="src" path="Facebook_src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="libs/android-support-v4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

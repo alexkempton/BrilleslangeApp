@@ -4,60 +4,13 @@
 	android:layout_width="fill_parent"
     android:layout_height="fill_parent"	>
     
-    <include android:id="@+id/topbar" layout="@layout/topbar" android:layout_height="wrap_content" />"
-    
-<<<<<<< HEAD
-
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <include android:id="@+id/topbar" layout="@layout/topbar" android:layout_height="wrap_content" />
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical"
 	android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#EEEEEE" >
     
-=======
-    <TextView
-        android:id="@+id/label"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Search here:"/>
-    <EditText
-        android:id="@+id/entry"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/editbox_background"
-        android:layout_below="@id/label"/>
-    <!--<Button
-    	android:id="@+id/advancedsearchbutton"
-    	android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/entry"
-        android:layout_alignParentLeft="true"
-        android:text="  Avansert  "/> -->
-    <Button
-        android:id="@+id/searchbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/entry"
-        android:layout_alignParentRight="true"
-        android:layout_marginLeft="10dip"
-        android:text="  Search  " />
-       
-       
-   <!-- <SlidingDrawer
-     	android:id="@+id/drawer"
-       	android:layout_width="fill_parent"
-     	android:layout_height="200dp"
-	    android:handle="@+id/handle"
-    	android:content="@+id/content" >
-     <Button
-         android:id="@id/handle"
-         android:layout_below="@id/entry"
-         android:layout_alignParentLeft="true"
-         android:text="  Avansert  "
-         android:layout_width="88dip"
-         android:layout_height="44dip" />
->>>>>>> 8360d188313b718a93aedc08732b6c72fb9a53d1
 
     
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"

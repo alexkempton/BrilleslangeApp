@@ -69,13 +69,5 @@ public class FrontPageActivity extends MapActivity {
 	protected boolean isRouteDisplayed() {
 		return false;
 	}
-<<<<<<< HEAD
-}
-=======
-
-
-
 	
-
 }
->>>>>>> 8360d188313b718a93aedc08732b6c72fb9a53d1
