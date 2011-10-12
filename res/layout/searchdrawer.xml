@@ -3,9 +3,24 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:orientation="vertical"
   android:layout_width="fill_parent"
-  android:layout_height="wrap_content"
-  android:background="#cd2b2d" >
-    
+  android:layout_height="wrap_content" >
+  
+  <ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/scrollView"
+		android:layout_width="fill_parent" android:layout_height="wrap_content" 
+		android:fillViewport="true" android:background="#cd2b2d"
+		android:layout_above="@id/buttonbackground" android:layout_below="@id/title" >
+		
+	<RelativeLayout
+  		xmlns:android="http://schemas.android.com/apk/res/android"
+  		android:id="@+id/innerDrawer"
+		android:orientation="vertical"
+  		android:layout_width="fill_parent"
+  		android:layout_height="wrap_content"
+ 		android:background="#cd2b2d"
+ 		android:isScrollContainer="true" >
+	
+	
+   
     <TextView 
     	android:id="@+id/advancedText"
     	android:layout_width="wrap_content"
@@ -22,6 +37,7 @@
     	android:layout_height="wrap_content"
     	android:layout_marginLeft="6dp"
     	android:layout_marginRight="6dp"
+    	android:background="@drawable/text_input"
     	android:layout_below="@id/advancedText" />
     	
     <TextView 
@@ -35,23 +51,25 @@
     	android:layout_marginTop="4dp"
     	android:layout_below="@+id/advancedTextField" />
     	
-    <EditText 
+    <Spinner 
     	android:id="@+id/fromYearTextField" 
     	android:layout_width="150dp"
     	android:layout_height="wrap_content"
     	android:layout_marginLeft="6dp"
     	android:layout_marginRight="6dp"
+    	android:background="@drawable/text_select"
     	android:layout_below="@id/fromYearText"/>
     	
     	
-    <EditText 
+    <Spinner 
        	android:id="@+id/toYearTextField" 
     	android:layout_width="150dp"
     	android:layout_height="wrap_content" 
     	android:layout_toRightOf="@id/fromYearTextField" 
     	android:layout_marginLeft="6dp"
     	android:layout_marginRight="6dp"
-    	android:layout_alignBaseline="@id/fromYearTextField"/>    
+    	android:background="@drawable/text_select"
+    	android:layout_alignBottom="@id/fromYearTextField"/>    
     		
     <TextView 
     	android:id="@+id/toYearText"
@@ -73,7 +91,8 @@
     	android:textColor="#FFFFFF"
     	android:textSize="16dp"
     	android:layout_marginLeft="10dp"
-    	android:layout_marginTop="4dp"
+    	android:layout_marginTop="6dp"
+    	android:layout_marginBottom="2dp"
     	android:layout_below="@id/fromYearTextField" />
     	
     <Spinner 
@@ -82,6 +101,7 @@
     	android:layout_height="wrap_content" 
     	android:layout_marginLeft="6dp"
     	android:layout_marginRight="6dp"
+    	android:background="@drawable/text_select"
     	android:layout_below="@id/languageText" />
     	
     	
@@ -93,7 +113,8 @@
     	android:textColor="#FFFFFF"
     	android:textSize="16dp"
     	android:layout_marginLeft="10dp"
-    	android:layout_marginTop="4dp"
+    	android:layout_marginTop="6dp"
+    	android:layout_marginBottom="2dp"
     	android:layout_below="@id/languageSpinner" />
     	
     <Spinner 
@@ -102,41 +123,43 @@
     	android:layout_height="wrap_content" 
     	android:layout_marginLeft="6dp"
     	android:layout_marginRight="6dp"
+    	android:layout_marginBottom="10dp"
+    	android:background="@drawable/text_select"
     	android:layout_below="@id/sortingText" />
-    	
-    	
-    <TextView 
-    	android:id="@+id/searchText"
-    	android:layout_width="wrap_content"
-    	android:layout_height="wrap_content"
-    	android:text="Søk:"
-    	android:textColor="#FFFFFF"
-    	android:textSize="16dp"
-    	android:layout_marginLeft="10dp"
-    	android:layout_marginTop="4dp"
-    	android:layout_below="@id/sortingSpinner" />
-    	
-    <EditText 
-    	android:id="@+id/searchTextField" 
-    	android:layout_width="fill_parent"
-    	android:layout_height="wrap_content" 
-    	android:layout_marginLeft="6dp"
-    	android:layout_marginRight="6dp"
-    	android:layout_below="@id/searchText" />
-    	
+	
+    	   
+    	    
 	<ImageButton 
-		android:id="@+id/advancedButton"
-		android:layout_width="160dp"
-		android:layout_height="wrap_content" 
-		android:layout_margin="5dp"
-		android:layout_below="@id/searchTextField" />
-		
+		android:id="@+id/button_close"
+		android:scaleType="centerInside"
+    	android:layout_width="170dp"
+    	android:layout_height="45dp"
+    	android:background="@null"
+    	android:layout_margin="5dp"
+    	android:src="@drawable/avansert_lukk_knapp"
+		android:layout_below="@id/sortingSpinner" />
+	
+	
 	<ImageButton 
 		android:id="@+id/searchButton"
-		android:layout_width="100dp"
-		android:layout_height="wrap_content" 
-		android:layout_below="@id/searchTextField"
-		android:layout_margin="5dp"
-		android:layout_alignParentRight="true" />
+        android:scaleType="centerInside"
+	    android:layout_width="95dp"
+    	android:layout_height="45dp"
+    	android:background="@null"
+    	android:layout_margin="5dp"
+	    android:layout_alignParentRight="true"
+	    android:src="@drawable/sok_knapp"
+		android:layout_below="@id/sortingSpinner" />
 		
+		</RelativeLayout>
+		</ScrollView>
+		
+		
+		<ImageView 
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/sliding_drawer_edge"
+    	android:layout_below="@id/scrollView" />
+
 </RelativeLayout>

@@ -18,7 +18,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
-public class FrontPageActivity extends MapActivity implements Runnable {
+public class FrontPageActivity extends MapActivity {
 	
 	ListView list;
 	LaztAdapter adapt;
@@ -31,9 +31,7 @@ public class FrontPageActivity extends MapActivity implements Runnable {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.frontpage);
 		map = (MapView) findViewById(R.id.mapview);
-		map.setStreetView(true);
-		map.setSatellite(false);
-		
+
 		list = (ListView)findViewById(R.id.list);
 		adapt = new LaztAdapter(this);
 		list.setAdapter(adapt);
@@ -41,7 +39,8 @@ public class FrontPageActivity extends MapActivity implements Runnable {
 		controller = map.getController();
 		controller.animateTo(new GeoPoint(59913837, 10752139));
 		controller.setZoom(12);
-		//run();
+		
+		
 		
 		
 		final Class[] activitados = {
@@ -114,18 +113,4 @@ public class FrontPageActivity extends MapActivity implements Runnable {
 	protected boolean isRouteDisplayed() {
 		return false;
 	}
-
-
-	@Override
-	public void run() {
-		try {
-			wait(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} finally {
-			controller.zoomInFixing(0, 0);
-		}
-		
-	}
-
 }

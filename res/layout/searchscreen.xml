@@ -1,80 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+    android:layout_height="fill_parent"	>
+    
+    <include android:id="@+id/topbar" layout="@layout/topbar" android:layout_height="wrap_content" />"
+    
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#EEEEEE" >
     
-    <TextView
-        android:id="@+id/label"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Search here:"/>
-    <EditText
-        android:id="@+id/entry"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/editbox_background"
-        android:layout_below="@id/label"/>
-    <!--<Button
-    	android:id="@+id/advancedsearchbutton"
-    	android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/entry"
-        android:layout_alignParentLeft="true"
-        android:text="  Avansert  "/> -->
-    <Button
-        android:id="@+id/searchbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/entry"
-        android:layout_alignParentRight="true"
-        android:layout_marginLeft="10dip"
-        android:text="  Search  " />
-       
-       
-   <!-- <SlidingDrawer
-     	android:id="@+id/drawer"
-     	android:layout_width="fill_parent"
-     	android:layout_height="200dp"
 
-	     android:handle="@+id/handle"
-    	 android:content="@+id/content">
-
-     <Button
-         android:id="@id/handle"
-         android:layout_below="@id/entry"
-         android:layout_alignParentLeft="true"
-         android:text="  Avansert  "
-         android:layout_width="88dip"
-         android:layout_height="44dip" />
-
-     <RelativeLayout
-         android:id="@id/content"
-         android:layout_width="fill_parent"
-         android:layout_height="fill_parent">
-         
-         <TextView 
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="helloooo"
-         />
-         	</RelativeLayout>
- </SlidingDrawer>
     
-     -->
-      <ProgressBar
-      	android:id="@+id/progressbar"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_below="@id/entry"
-         />
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   		android:id="@+id/searchLayout"
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+    	android:layout_height="110dp"
+    	android:background="#cd2b2d" >
+        
+        <ImageView 
+        	android:layout_width="fill_parent" 
+        	android:layout_height="wrap_content"
+        	android:scaleType="fitXY"
+        	android:layout_alignParentBottom="true"
+        	android:src="@drawable/red_top_bar" />"
+        
+    	<EditText
+        	android:id="@+id/entry"
+        	android:layout_width="fill_parent"
+        	android:layout_height="40dp"
+        	android:layout_marginLeft="6dp"
+        	android:layout_marginRight="6dp"
+        	android:layout_marginTop="6dp"
+        	android:layout_marginBottom="2dp"
+        	android:background="@drawable/text_input"
+        	android:hint="Søk her" />
+        
+    	<ImageButton 
+    		android:id="@+id/button_open"
+    		android:scaleType="centerInside"
+    		android:layout_width="170dp"
+    		android:layout_height="45dp"
+    		android:background="@null"
+    		android:layout_margin="5dp"
+    		android:src="@drawable/avansert_sok_knapp"
+    		android:layout_below="@id/entry" />
+        	
+    	<ImageButton
+        	android:id="@+id/searchbutton"
+        	android:scaleType="centerInside"
+	        android:layout_width="95dp"
+    	    android:layout_height="45dp"
+    	    android:background="@null"
+    	    android:layout_margin="5dp"
+	        android:layout_alignParentRight="true"
+	        android:src="@drawable/sok_knapp"
+	        android:layout_below="@id/entry" />
+       
+	    <ProgressBar
+			android:id="@+id/progressbar"
+	        android:layout_width="40dp"
+    	    android:layout_height="40dp"
+        	android:layout_alignBottom="@id/entry"
+        	android:layout_alignRight="@id/entry" />
          
-     <ListView
+
+	</RelativeLayout>
+    
+    
+    
+    <ListView
         android:id="@+id/searchresultslist"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" 
         android:layout_weight="1"
+        android:background="#EEEEEE"
         android:divider="#B3B3B3"
         android:dividerHeight="1px"
-        android:layout_below="@id/searchbutton"
-        />
+        android:layout_below="@id/searchLayout" />
+    
+	<edu.brilleslange.widget.MultiDirectionSlidingDrawer
+		xmlns:my="http://schemas.android.com/apk/res/edu.brilleslange"
+		android:id="@+id/drawer"
+		my:direction="topToBottom"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		my:bottomOffset="200dp"
+		my:handle="@+id/handle"
+    	my:content="@+id/content"  >
+    	
+    	<include android:id="@id/content" layout="@layout/searchdrawer" />
+    	
+    	<ImageButton
+			android:id="@id/handle"
+			android:layout_width="160dp"
+			android:layout_height="0dp"
+			android:layout_margin="0dp"
+			android:background="@null"
+			android:layout_below="@id/button_close" />
+    
+    </edu.brilleslange.widget.MultiDirectionSlidingDrawer>
+    
+    
 </RelativeLayout>
+</LinearLayout>

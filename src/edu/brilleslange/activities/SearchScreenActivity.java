@@ -3,6 +3,7 @@ package edu.brilleslange.activities;
 
 import java.util.ArrayList;
 
+import edu.brilleslange.widget.MultiDirectionSlidingDrawer;
 import edu.brilleslange.R;
 import edu.brilleslange.bl.BibsysBridge;
 import edu.brilleslange.bl.Record;
@@ -14,16 +15,27 @@ import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ProgressBar;
 
+
 public class SearchScreenActivity extends Activity {
+	
+
+	ImageButton mCloseButton;
+	ImageButton mOpenButton;
+	MultiDirectionSlidingDrawer mDrawer;
+	
+	
 	//String searchValue;
 	BibsysBridge bibsys = new BibsysBridge();
 	ArrayList<String> l = new ArrayList<String>();
@@ -38,7 +50,7 @@ public class SearchScreenActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.searchscreen);
-		Button searchb = (Button) findViewById(R.id.searchbutton);
+		ImageButton searchb = (ImageButton) findViewById(R.id.searchbutton);
 		mProgress = (ProgressBar) findViewById(R.id.progressbar);
 		mProgress.setVisibility(View.INVISIBLE);
 
@@ -56,9 +68,44 @@ public class SearchScreenActivity extends Activity {
 				updateSearchResults(searchValue);
 			}
 		});
+		
+		
+		
+		// SLIDING DRAWER:
+		
+		
+		mCloseButton.setOnClickListener( new OnClickListener() {
+			@Override
+			public void onClick( View v )
+			{
+				mDrawer.animateClose();
+			}
+		});
+        
+        mOpenButton.setOnClickListener( new OnClickListener() {
+			
+			@Override
+			public void onClick( View v )
+			{
+				if( !mDrawer.isOpened() )
+					mDrawer.animateOpen();
+			}
+		});
+		
+		
+		
 	}
-	
+    @Override
+   public void onContentChanged()
+   {
+   	super.onContentChanged();
+   	mCloseButton = (ImageButton) findViewById( R.id.button_close );
+   	mOpenButton = (ImageButton) findViewById( R.id.button_open );
+   	mDrawer = (MultiDirectionSlidingDrawer) findViewById( R.id.drawer );
+   }
 
+    // SLIDING DRAWER SLUTT
+    
 	void updateSearchResults(String s){
 		this.s = s;
 		new GetBibsys(this,s).start();
