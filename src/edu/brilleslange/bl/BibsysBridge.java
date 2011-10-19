@@ -6,11 +6,14 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
+import java.net.URLEncoder;
 
 import edu.brilleslange.bl.MyXMLHandler;
 
 public class BibsysBridge {
 	public ArrayList<Record> search(String title){
+		title = URLEncoder.encode(title);
+		
 		try {
 			SAXParserFactory spf = SAXParserFactory.newInstance();
 			SAXParser sp = spf.newSAXParser();
@@ -23,6 +26,7 @@ public class BibsysBridge {
 			xr.parse(new InputSource(sourceUrl.openStream()));
 
 		} catch (Exception e) {
+			String ex = e.getMessage();
 		}
 
 		ArrayList<Record> records = MyXMLHandler.records.getRecord();

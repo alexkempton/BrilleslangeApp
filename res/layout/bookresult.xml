@@ -1,23 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+ android:id="@+id/ScrollView01"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent">
+<LinearLayout 
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#EEEEEE">
+     <TextView
+        android:id="@+id/label1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Tittel:"/>
  <TextView
   	  android:id="@+id/bookresulttitletext"
   	  android:layout_width="fill_parent"
 	  android:layout_height="wrap_content"
 	  android:layout_weight="1" android:layout_gravity="left|center_vertical" android:textSize="20dip" android:layout_marginLeft="10dip"/>
+  <TextView
+        android:id="@+id/label2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Forfatter:"/>
  <TextView
   	  android:id="@+id/bookresultauthortext"
   	  android:layout_width="fill_parent"
 	  android:layout_height="wrap_content"
 	  android:layout_weight="1" android:layout_gravity="left|center_vertical" android:textSize="20dip" android:layout_marginLeft="10dip"/>
 	   <TextView
+        android:id="@+id/label2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Plassering:"/>
+	  <TextView
   	  android:id="@+id/bookresultplacementtext"
   	  android:layout_width="fill_parent"
 	  android:layout_height="wrap_content"
 	  android:layout_weight="1" android:layout_gravity="left|center_vertical" android:textSize="20dip" android:layout_marginLeft="10dip"/>
    
 </LinearLayout>
+</ScrollView>
