@@ -45,7 +45,7 @@ public class FrontPageActivity extends MapActivity {
 		
 		final Class[] activitados = {
 			BookALibrarianActivity.class,
-			BookALibrarianActivity.class,
+			ArticleOfTheWeekActivity.class,
 			FacebookActivity.class,
 			BuildingPlanActivity.class,
 			SearchScreenActivity.class,
