@@ -11,7 +11,7 @@ public class Record implements Serializable {
 	private static final long serialVersionUID = 1L;
 	public String title;
 	public String author;
-	public String placement;
+	public String placement = "";
 	
 	
 }
@@ -24,6 +24,6 @@ class PlacementO {
 		for(String s : placements){
 			placement+= " - " + s; 
 		}
-		return Pattern.matches("*UREAL*", placement);
+		return Pattern.matches(".*UREAL.*", placement);
 	}
 }
