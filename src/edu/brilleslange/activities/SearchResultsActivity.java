@@ -1,5 +1,5 @@
 package edu.brilleslange.activities;
-
+/* Denne bruker vi vel ikke mer
 import java.util.ArrayList;
 
 import edu.brilleslange.R;
@@ -48,4 +48,4 @@ public class SearchResultsActivity extends Activity {
 
 
 	}
-}
+}*/

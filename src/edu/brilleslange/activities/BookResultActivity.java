@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+
 public class BookResultActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

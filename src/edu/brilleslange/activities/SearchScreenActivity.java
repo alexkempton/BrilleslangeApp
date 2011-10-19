@@ -36,7 +36,6 @@ public class SearchScreenActivity extends Activity {
 	MultiDirectionSlidingDrawer mDrawer;
 	
 	
-	//String searchValue;
 	BibsysBridge bibsys = new BibsysBridge();
 	ArrayList<String> l = new ArrayList<String>();
 	ListView list;
@@ -92,7 +91,17 @@ public class SearchScreenActivity extends Activity {
 			}
 		});
 		
-		
+
+        ImageButton advancedSearchButton = (ImageButton)findViewById(R.id.searchButton);
+        advancedSearchButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick( View v )
+			{
+				EditText advancedTextField = (EditText)findViewById(R.id.advancedTextField);
+				updateSearchResults(advancedTextField.getText().toString());
+			}
+		});	
 		
 	}
     @Override
@@ -104,6 +113,7 @@ public class SearchScreenActivity extends Activity {
    	mDrawer = (MultiDirectionSlidingDrawer) findViewById( R.id.drawer );
    }
 
+    
     // SLIDING DRAWER SLUTT
     
 	void updateSearchResults(String s){
