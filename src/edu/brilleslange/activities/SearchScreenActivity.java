@@ -26,6 +26,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 
 
 public class SearchScreenActivity extends Activity {
@@ -44,6 +45,12 @@ public class SearchScreenActivity extends Activity {
 	ProgressBar mProgress;
 	Handler mHandler = new Handler();
 	String s;
+	
+	final String[] searchByWords = {
+		"Tittel","Forfatter"	
+	};
+	
+	
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -91,10 +98,10 @@ public class SearchScreenActivity extends Activity {
 			}
 		});
 		
-
+        Spinner sortingSpinner = (Spinner) findViewById(R.id.sortingSpinner);
+        sortingSpinner.setAdapter(new ArrayAdapter<String>();
         ImageButton advancedSearchButton = (ImageButton)findViewById(R.id.searchButton);
         advancedSearchButton.setOnClickListener(new OnClickListener() {
-			
 			@Override
 			public void onClick( View v )
 			{
