@@ -33,12 +33,24 @@
     	
     <EditText 
     	android:id="@+id/advancedTextField" 
-    	android:layout_width="fill_parent"
+    	android:layout_width="200dp"
     	android:layout_height="wrap_content"
     	android:layout_marginLeft="6dp"
     	android:layout_marginRight="6dp"
     	android:background="@drawable/text_input"
     	android:layout_below="@id/advancedText" />
+   
+    	
+    <Spinner 
+       	android:id="@+id/searchChoice" 
+    	android:layout_width="150dp"
+    	android:layout_height="wrap_content" 
+    	android:layout_toRightOf="@id/advancedTextField" 
+    	android:layout_marginLeft="6dp"
+    	android:layout_marginRight="6dp"
+    	android:background="@drawable/text_select"
+    	android:layout_alignBottom="@id/advancedTextField"/>    
+    	
     	
     <TextView 
     	android:id="@+id/fromYearText"

@@ -30,13 +30,13 @@ import android.widget.Spinner;
 
 
 public class SearchScreenActivity extends Activity {
-	
+
 
 	ImageButton mCloseButton;
 	ImageButton mOpenButton;
 	MultiDirectionSlidingDrawer mDrawer;
-	
-	
+
+
 	BibsysBridge bibsys = new BibsysBridge();
 	ArrayList<String> l = new ArrayList<String>();
 	ListView list;
@@ -45,12 +45,6 @@ public class SearchScreenActivity extends Activity {
 	ProgressBar mProgress;
 	Handler mHandler = new Handler();
 	String s;
-	
-	final String[] searchByWords = {
-		"Tittel","Forfatter"	
-	};
-	
-	
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -74,12 +68,12 @@ public class SearchScreenActivity extends Activity {
 				updateSearchResults(searchValue);
 			}
 		});
-		
-		
-		
+
+
+
 		// SLIDING DRAWER:
-		
-		
+
+
 		mCloseButton.setOnClickListener( new OnClickListener() {
 			@Override
 			public void onClick( View v )
@@ -87,9 +81,9 @@ public class SearchScreenActivity extends Activity {
 				mDrawer.animateClose();
 			}
 		});
-        
-        mOpenButton.setOnClickListener( new OnClickListener() {
-			
+
+		mOpenButton.setOnClickListener( new OnClickListener() {
+
 			@Override
 			public void onClick( View v )
 			{
@@ -97,38 +91,64 @@ public class SearchScreenActivity extends Activity {
 					mDrawer.animateOpen();
 			}
 		});
+
+		Spinner sortingSpinner = (Spinner) findViewById(R.id.sortingSpinner);
+
+		ArrayAdapter<String> sortingSpinnerAd = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, searchByWords);
+		sortingSpinnerAd.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		sortingSpinner.setAdapter(sortingSpinnerAd);
 		
-        Spinner sortingSpinner = (Spinner) findViewById(R.id.sortingSpinner);
-        sortingSpinner.setAdapter(new ArrayAdapter<String>();
-        ImageButton advancedSearchButton = (ImageButton)findViewById(R.id.searchButton);
-        advancedSearchButton.setOnClickListener(new OnClickListener() {
+		Spinner languageSpinner = (Spinner) findViewById(R.id.languageSpinner);
+		ArrayAdapter<String> languageSpinnerAd = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, languages);
+		languageSpinnerAd.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		languageSpinner.setAdapter(languageSpinnerAd);		
+		
+		Spinner searchChoiceSpinner = (Spinner) findViewById(R.id.searchChoice);
+		ArrayAdapter<String> searchChoiceSpinnerAd = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, searchChoice);
+		searchChoiceSpinnerAd.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		searchChoiceSpinner.setAdapter(searchChoiceSpinnerAd);
+		
+		ImageButton advancedSearchButton = (ImageButton)findViewById(R.id.searchButton);
+		advancedSearchButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick( View v )
 			{
+				Spinner searchChoiceSpinner = (Spinner) findViewById(R.id.searchChoice);
+				Spinner sortingSpinner = (Spinner) findViewById(R.id.sortingSpinner);
+				Spinner languageSpinner = (Spinner) findViewById(R.id.languageSpinner);
 				EditText advancedTextField = (EditText)findViewById(R.id.advancedTextField);
-				updateSearchResults(advancedTextField.getText().toString());
+				String searchString = searchChoiceCodes[searchChoiceSpinner.getSelectedItemPosition()] + "=";
+				searchString += advancedTextField.getText().toString();
+				
+				int langPos = languageSpinner.getSelectedItemPosition();
+				if(langPos!=0){
+					searchString += " AND language=" + languageCodes[langPos];
+				}
+				
+				searchString += " sortby " + searchByWordsCodes[sortingSpinner.getSelectedItemPosition()];
+				updateSearchResults(searchString);
 			}
 		});	
-		
-	}
-    @Override
-   public void onContentChanged()
-   {
-   	super.onContentChanged();
-   	mCloseButton = (ImageButton) findViewById( R.id.button_close );
-   	mOpenButton = (ImageButton) findViewById( R.id.button_open );
-   	mDrawer = (MultiDirectionSlidingDrawer) findViewById( R.id.drawer );
-   }
 
-    
-    // SLIDING DRAWER SLUTT
-    
+	}
+	@Override
+	public void onContentChanged()
+	{
+		super.onContentChanged();
+		mCloseButton = (ImageButton) findViewById( R.id.button_close );
+		mOpenButton = (ImageButton) findViewById( R.id.button_open );
+		mDrawer = (MultiDirectionSlidingDrawer) findViewById( R.id.drawer );
+	}
+
+
+	// SLIDING DRAWER SLUTT
+
 	void updateSearchResults(String s){
 		this.s = s;
 		new GetBibsys(this,s).start();
 		mProgress.setProgress(30);
 	}
-	
+
 	synchronized void callback(ArrayList<Record> results){
 		this.results = results;
 		l.clear();
@@ -137,15 +157,23 @@ public class SearchScreenActivity extends Activity {
 		}
 		handler.sendEmptyMessage(0);
 	}
-	
 
-private Handler handler = new Handler() {
-	@Override
-	public void  handleMessage(Message msg) {
-		adapt.notifyDataSetChanged();
-		mProgress.setVisibility(View.GONE);
-	}};
 
+	private Handler handler = new Handler() {
+		@Override
+		public void  handleMessage(Message msg) {
+			adapt.notifyDataSetChanged();
+			mProgress.setVisibility(View.GONE);
+		}};
+
+		// Variable
+		final String[] searchChoice = {"Tittel","Forfatter"};
+		final String[] searchChoiceCodes = {"title","author"};
+		final String[] searchByWords = {"Tittel","Forfatter","Nyeste først","Eldste først"};
+		final String[] searchByWordsCodes = {"title","author","sortdate","sortdate-"};
+		final String[] languages = {"Alle","Norsk bokmål", "Norsk nynorsk", "Engelsk", "Dansk", "Finsk", "Fransk", "Færøysk", "Tysk", "Islandsk", "Italiensk", "Spansk", "Svensk", "Tegnspråk", "Afrikaans", "Albansk", "Amharisk", "Angelsaksisk", "Arabisk", "Armensk", "Aserbajdsjansk", "Bengali", "Bulgarsk", "Egyptisk", "Engelsk (mellomengelsk)", "Esperanto", "Estisk", "Flerspråklig", "Fransk (mellomfransk)", "Frisisk", "Fulfulde", "Georgisk", "Gresk (etter 1453)", "Gresk (fram til 1453)", "Hebraisk", "Hindi", "Indonesisk", "Irsk", "Japansk", "Jiddish", "Kalaalisut (Grønland)", "Katalansk", "Kinesisk", "Koptisk", "Koreansk", "Kroatisk", "Kurdisk", "Latin", "Latvisk", "Litauisk", "Makedonsk", "Nederlandsk (inkl. Flamsk)", "Norsk, gammelnorsk", "Norsk, mellomnorsk", "Panjabi", "Persisk (Farsi)", "Polsk", "Portugisisk", "Pushto", "Romani", "Rumensk", "Russisk", "Samisk, Inarisamisk", "Samisk, Lulesamisk", "Samisk, Nordsamisk", "Samisk, Skoltesamisk", "Samisk, Sørsamisk", "Samisk, andre", "Sanskrit", "Serbisk", "Slovakisk", "Slovensk", "Somali", "Swahili", "Tamil", "Thai", "Tibetansk", "Tsjekkisk", "Tyrkisk", "Ukrainsk", "Ungarsk", "Urdu", "Vietnamesisk", "Zulu"};
+		final String[] languageCodes = {"all","nob", "nno", "eng", "dan", "fin", "fre", "fao", "ger", "ice", "ita", "spa", "swe", "sgn", "afr", "alb", "amh", "ang", "ara", "arm", "aze", "ben", "bul", "egy", "enm", "epo", "est", "mul", "frm", "fry", "ful", "geo", "gre", "grc", "heb", "hin", "ind", "gle", "jpn", "yid", "kal", "cat", "chi", "cop", "kor", "scr", "kur", "lat", "lav", "lit", "mac", "dut", "non", "nom", "pan", "per", "pol", "por", "pus", "rom", "rum", "rus", "smn" , "smj", "sme", "sms", "sma", "smi", "san", "scc", "slo", "slv", "som", "swa", "tam", "tha", "tib", "cze", "tur", "ukr", "hun", "urd", "vie", "zul"} ;
+		
 }
 
 class GetBibsys extends Thread{
@@ -157,13 +185,13 @@ class GetBibsys extends Thread{
 		mHandler = ssa.mHandler;
 		this.s = s;
 	}
-	
+
 	public void run() {
 		mHandler.post(new Runnable() {
 			public void run() {
 				ssa.mProgress.setProgress(30);
 			}
-			});
+		});
 
 		ArrayList<Record> results = new BibsysBridge().search(s);
 		ssa.callback(results);
