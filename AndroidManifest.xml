@@ -22,4 +22,5 @@
 		<activity android:name=".activities.ArticleOfTheWeekActivity" android:theme="@android:style/Theme.NoTitleBar"/>
 	</application>
 	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 </manifest>

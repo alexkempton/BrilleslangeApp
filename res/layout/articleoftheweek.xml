@@ -8,20 +8,12 @@
 	
 	<include android:id="@+id/topbar" layout="@layout/topbar" android:layout_height="wrap_content" />"
 
-
-	<TextView 
-		android:id="@+id/text"
+		
+	<WebView
+		android:id="@+id/webview"
 		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:gravity="center"
-		android:text="Laster ned ukens artikkel" />
-		
-		
-			
-	<WebView  xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/webview"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" />
+		android:layout_height="fill_parent"
+	/>
 
 
 </LinearLayout>

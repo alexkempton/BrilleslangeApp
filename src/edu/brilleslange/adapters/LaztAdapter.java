@@ -15,8 +15,8 @@ public class LaztAdapter extends BaseAdapter {
     
     private Activity activity;
     private static LayoutInflater inflater=null;
-    private int[] data = new int[6];
-    private String[] menuTxt = new String[6];
+    private int[] data = new int[5];
+    private String[] menuTxt = new String[5];
     
     public LaztAdapter(Activity a) {
         activity = a;
@@ -24,15 +24,15 @@ public class LaztAdapter extends BaseAdapter {
         data[0] = R.drawable.bbk;
         data[1] = R.drawable.document;
         data[2] = R.drawable.facebookv2;
-        data[3] = R.drawable.map;
-        data[4] = R.drawable.search;
-        data[5] = R.drawable.twitter;
+        //data[3] = R.drawable.map;
+        data[3] = R.drawable.search;
+        data[4] = R.drawable.twitter;
         menuTxt[0] = "Bestill en bibliotekar";
         menuTxt[1] = "Ukens artikkel";
         menuTxt[2] = "Hva skjer på biblioteket?";
-        menuTxt[3] = "Finn i bygget";
-        menuTxt[4] = "Søk etter litteratur";
-        menuTxt[5] = "#Realfagsbiblioteket";
+        //menuTxt[3] = "Finn i bygget";
+        menuTxt[3] = "Søk etter litteratur";
+        menuTxt[4] = "#Realfagsbiblioteket";
     }
 
     public int getCount() {
