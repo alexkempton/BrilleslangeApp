@@ -5,12 +5,16 @@
 	android:background="#EEEEEE" android:gravity="center_vertical">
 
 	<include android:id="@+id/topbar" layout="@layout/topbar" android:layout_height="wrap_content" />"
+	
+	<ImageView
+    	android:layout_height="45dp"
+    	android:layout_width="wrap_content"
+    	android:layout_alignParentTop="true"
+    	android:src="@drawable/title_bestill"
+		android:scaleType="centerInside"
+    	android:layout_alignParentLeft="true" />
+	
 
-	<TextView android:id="@+id/title" android:layout_width="fill_parent"
-		android:layout_height="50dp" android:text="Bestill en bibliotekar"
-		android:textColor="#FFFFFF" android:gravity="center"
-		android:textSize="28dp" android:background="@drawable/red_top_bar"
-		android:layout_below="@id/topbar" />
 
 	<View android:id="@+id/buttonbackground" android:layout_width="fill_parent"
 		android:layout_height="55dp" android:layout_alignParentBottom="true"
@@ -18,8 +22,8 @@
 		
 	<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/scrollView"
 		android:layout_width="fill_parent" android:layout_height="wrap_content" 
-		android:fillViewport="true" android:background="#444444"
-		android:layout_above="@id/buttonbackground" android:layout_below="@id/title" >
+		android:fillViewport="true" android:background="#666666"
+		android:layout_above="@id/buttonbackground" android:layout_below="@id/topbar" >
 
 
 
@@ -28,66 +32,56 @@
 		android:background="#EEEEEE" >
 
 
-
-
-		<TextView android:id="@+id/topText" android:layout_width="fill_parent"
-			android:layout_height="wrap_content" 
-			android:text=" -  Skal du i gang med en større oppgave, et prosjekt eller en avhandling?
-\n -  Har du behov for hjelp eller veiledning i forbindelse med informasjonssøking?
-\n -  Trenger du veiledning i bruk av elektroniske ressurser, f.eks. en database?\n"
-			android:layout_marginLeft="10dp" android:layout_marginTop="10dp" 
-			android:textColor="#000000" />
-
 		<TextView android:id="@+id/bottomText" android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:text="Du kan bestille en bibliotekar som setter av inntil en time til deg og din problemstilling. Foreslå tidspunkt som passer for deg; vanligvis fra kl. 9.00-15.00, mandag-fredag.\n\n
 Registrér din forespørsel i skjemaet under. Vi svarer så raskt som mulig, og senest innen to virkedager.\n"
-			android:layout_marginLeft="10dp" android:layout_marginTop="10dp" 
-			android:textColor="#000000" android:layout_below="@id/topText" />
+			android:layout_marginLeft="6dp" android:layout_marginTop="10dp" android:layout_marginRight="6dp"
+			android:textColor="#000000" />
 
 		<TextView android:id="@+id/username" android:layout_width="fill_parent"
-			android:layout_height="wrap_content" android:layout_marginLeft="10dp"
-			android:text="Brukernavn:"
+			android:layout_height="wrap_content" android:layout_marginLeft="6dp"
+			android:text="UiO Brukernavn:"
 			android:textColor="#000000" android:layout_below="@id/bottomText" />
 
 		<EditText android:id="@+id/bookALibrarianUsername"
 			android:layout_width="fill_parent" android:layout_height="wrap_content"
-			android:background="@android:drawable/editbox_background" 
-			android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_marginBottom="10dp"
+			android:background="@drawable/text_input" 
+			android:layout_marginLeft="6dp" android:layout_marginRight="6dp" android:layout_marginBottom="6dp"
 			android:inputType="textNoSuggestions" android:layout_below="@id/username" />
 
 		<TextView android:id="@+id/phone" android:layout_width="fill_parent"
-			android:layout_height="wrap_content" android:layout_marginLeft="10dp"
+			android:layout_height="wrap_content" android:layout_marginLeft="6dp"
 			android:text="Telefon:"
 			android:textColor="#000000" android:layout_below="@id/bookALibrarianUsername" />
 
 		<EditText android:id="@+id/bookALibrarianPhone"
 			android:layout_width="fill_parent" android:layout_height="wrap_content"
-			android:background="@android:drawable/editbox_background"
-			android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_marginBottom="10dp"
+			android:background="@drawable/text_input" 
+			android:layout_marginLeft="6dp" android:layout_marginRight="6dp" android:layout_marginBottom="6dp"
 			android:inputType="phone" android:layout_below="@id/phone" />
 
 		<TextView android:id="@+id/time" android:layout_width="fill_parent"
-			android:layout_height="wrap_content" android:layout_marginLeft="10dp"
+			android:layout_height="wrap_content" android:layout_marginLeft="6dp"
 			android:text="Ønsket tidspunkt: (sett opp flere alternativer)"
 			android:textColor="#000000" android:layout_below="@id/bookALibrarianPhone" />
 
 		<EditText android:id="@+id/bookALibrarianTime"
 			android:layout_width="fill_parent" android:layout_height="wrap_content"
-			android:background="@android:drawable/editbox_background"
-			android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_marginBottom="10dp"
+			android:background="@drawable/text_input" android:inputType="textShortMessage"
+			android:layout_marginLeft="6dp" android:layout_marginRight="6dp" android:layout_marginBottom="6dp"
 			android:layout_below="@id/time" />
 
 		<TextView android:id="@+id/description" android:layout_width="fill_parent"
-			android:layout_height="wrap_content" android:layout_marginLeft="10dp"
+			android:layout_height="wrap_content" android:layout_marginLeft="6dp"
 			android:text="Kort beskrivelse av din problemstilling:"
 			android:textColor="#000000" android:layout_below="@id/bookALibrarianTime" />
 
 		<EditText android:id="@+id/bookALibrarianDescription"
-			android:layout_width="fill_parent" android:layout_height="60dp"
-			android:inputType="textMultiLine" android:lines="5" android:gravity="top"
-			android:background="@android:drawable/editbox_background"
-			android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_marginBottom="10dp"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:inputType="textMultiLine" android:minLines="3" android:gravity="top"
+			android:background="@drawable/text_input" 
+			android:layout_marginLeft="6dp" android:layout_marginRight="6dp" android:layout_marginBottom="10dp"
 			android:layout_below="@id/description" />
 			
 	</RelativeLayout>
@@ -95,7 +89,7 @@ Registrér din forespørsel i skjemaet under. Vi svarer så raskt som mulig, og 
 	<ImageButton android:scaleType="centerInside" android:id="@+id/bookbutton" 
 		android:background="@null" 
 		android:src="@drawable/bestill_bibliotekar_knapp" 
-		android:layout_width="260dp" android:layout_height="50dp" 
+		android:layout_width="190dp" android:layout_height="55dp" 
 		android:layout_alignParentBottom="true" 
 		android:layout_centerHorizontal="true" />
 

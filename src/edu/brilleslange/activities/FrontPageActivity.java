@@ -35,6 +35,7 @@ public class FrontPageActivity extends MapActivity {
 	LaztAdapter adapt;
 	MapView map;
 	MapController controller;
+	MyLocationOverlay myLocationOverlay;
 
 
 	/** Called when the activity is first created. */
@@ -45,7 +46,7 @@ public class FrontPageActivity extends MapActivity {
 		map = (MapView) findViewById(R.id.mapview);
 
 		//Location:
-		MyLocationOverlay myLocationOverlay = new MyLocationOverlay(this, map);
+		myLocationOverlay = new MyLocationOverlay(this, map);
 		map.getOverlays().add(myLocationOverlay);
 		myLocationOverlay.enableMyLocation();
 
@@ -58,28 +59,29 @@ public class FrontPageActivity extends MapActivity {
 		controller = map.getController();
 		controller.animateTo(new GeoPoint(59940127, 10723279));
 		controller.setZoom(14);
-
+		
+		// Overlays:
 		List<Overlay> mapOverlays = map.getOverlays();
-		Drawable bib1Icon = this.getResources().getDrawable(R.drawable.maps1);
+		
 		Drawable bib2Icon = this.getResources().getDrawable(R.drawable.maps2);
-		Drawable locIcon = this.getResources().getDrawable(R.drawable.blue_dot);
-		MyOverlay bib1Overlay = new MyOverlay(bib1Icon, this);
+		Drawable bib1Icon = this.getResources().getDrawable(R.drawable.maps1);
+		
 		MyOverlay bib2Overlay = new MyOverlay(bib2Icon, this);
-		MyOverlay locOverlay = new MyOverlay(locIcon); // todo
+		MyOverlay bib1Overlay = new MyOverlay(bib1Icon, this);
 
-		GeoPoint vbh = new GeoPoint(59940127, 10723279);
 		GeoPoint ojd = new GeoPoint(59944078, 10719089);
-		GeoPoint loc = new GeoPoint(59944578, 10719589); // todo
-		OverlayItem vbhItem = new OverlayItem(vbh, "Vilhelm Bjerknes' hus", "Moltke Moes vei 35\n0851 Oslo, Norge");
+		GeoPoint vbh = new GeoPoint(59940127, 10723279);
+		
 		OverlayItem ojdItem = new OverlayItem(ojd, "Ole Johan Dals Hus", "GaustadallÈen 23\n0373 Oslo, Norge");
-		OverlayItem locItem = new OverlayItem(loc, null, null); // todo
+		OverlayItem vbhItem = new OverlayItem(vbh, "Vilhelm Bjerknes' hus", "Moltke Moes vei 35\n0851 Oslo, Norge");
 
-		bib1Overlay.addOverlay(vbhItem);
 		bib2Overlay.addOverlay(ojdItem);
-		locOverlay.addOverlay(locItem); // todo
-		mapOverlays.add(bib1Overlay);
+		bib1Overlay.addOverlay(vbhItem);
+		
 		mapOverlays.add(bib2Overlay);
-		mapOverlays.add(myLocationOverlay); // todo
+		mapOverlays.add(bib1Overlay);
+		mapOverlays.add(myLocationOverlay); 
+		
 
 		final Class[] activitados = {
 				BookALibrarianActivity.class,
@@ -98,6 +100,23 @@ public class FrontPageActivity extends MapActivity {
 		});
 
 	}
+	
+	
+	
+	@Override
+	protected void onPause() {
+		super.onPause();
+		myLocationOverlay.disableMyLocation();
+	}
+	
+	
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		myLocationOverlay.enableMyLocation();
+	}
+
 
 
 	@Override //Denne må være med når aktiviteten viser et kart

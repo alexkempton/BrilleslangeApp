@@ -7,8 +7,8 @@
   
   <ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/scrollView"
 		android:layout_width="fill_parent" android:layout_height="wrap_content" 
-		android:fillViewport="true" android:background="#cd2b2d"
-		android:layout_above="@id/buttonbackground" android:layout_below="@id/title" >
+		android:fillViewport="true" android:background="#666666"
+		android:layout_above="@id/buttonbackground"  >
 		
 	<RelativeLayout
   		xmlns:android="http://schemas.android.com/apk/res/android"
@@ -30,26 +30,25 @@
     	android:textSize="16dp"
     	android:layout_marginLeft="10dp"
     	android:layout_marginTop="4dp" />
+
+    <Spinner 
+       	android:id="@+id/searchChoice" 
+    	android:layout_width="110dp"
+    	android:layout_height="wrap_content" 
+    	android:layout_marginLeft="6dp"
+    	android:background="@drawable/text_addon"
+    	android:layout_below="@id/advancedText" />  
+    
     	
     <EditText 
     	android:id="@+id/advancedTextField" 
-    	android:layout_width="200dp"
+    	android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
-    	android:layout_marginLeft="6dp"
     	android:layout_marginRight="6dp"
-    	android:background="@drawable/text_input"
-    	android:layout_below="@id/advancedText" />
-   
-    	
-    <Spinner 
-       	android:id="@+id/searchChoice" 
-    	android:layout_width="150dp"
-    	android:layout_height="wrap_content" 
-    	android:layout_toRightOf="@id/advancedTextField" 
-    	android:layout_marginLeft="6dp"
-    	android:layout_marginRight="6dp"
-    	android:background="@drawable/text_select"
-    	android:layout_alignBottom="@id/advancedTextField"/>    
+    	android:inputType="text"
+    	android:layout_toRightOf="@id/searchChoice" 
+    	android:background="@drawable/text_input_edged"
+    	android:layout_alignBottom="@id/searchChoice" />
     	
     	
     <TextView 

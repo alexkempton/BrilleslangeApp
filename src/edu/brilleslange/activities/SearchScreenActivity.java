@@ -130,7 +130,7 @@ public class SearchScreenActivity extends Activity {
 		languageSpinner.setAdapter(languageSpinnerAd);		
 		
 		Spinner searchChoiceSpinner = (Spinner) findViewById(R.id.searchChoice);
-		ArrayAdapter<String> searchChoiceSpinnerAd = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, searchChoice);
+		ArrayAdapter<String> searchChoiceSpinnerAd = new ArrayAdapter<String>(this, R.layout.spinner_item, searchChoice);
 		searchChoiceSpinnerAd.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		searchChoiceSpinner.setAdapter(searchChoiceSpinnerAd);
 		

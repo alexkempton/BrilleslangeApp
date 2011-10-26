@@ -1,23 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#EEEEEE">
-<ProgressBar
-      	android:id="@+id/fprogressbar"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_gravity="center"
-         android:layout_marginTop="90dp"
-         style="@android:style/Widget.ProgressBar.Large.Inverse"
-         />
-<WebView  xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/webview"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-/>
+    
+    <include android:id="@+id/topbar" layout="@layout/topbar" android:layout_height="wrap_content" />
+    
+   	<ImageView
+    	android:layout_height="45dp"
+    	android:layout_width="wrap_content"
+    	android:layout_alignParentTop="true"
+    	android:src="@drawable/title_facebook"
+		android:scaleType="centerInside"
+    	android:layout_alignParentLeft="true" />
+    
+    
+    
+	<ProgressBar
+    	android:id="@+id/fprogressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:layout_below="@id/topbar"
+        style="@android:style/Widget.ProgressBar.Large.Inverse" />
+	
+	<WebView  xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:id="@+id/webview"
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	android:layout_below="@id/topbar" />
 
- </LinearLayout>
+ </RelativeLayout>
 
 
