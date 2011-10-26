@@ -8,15 +8,19 @@ import edu.brilleslange.R;
 import edu.brilleslange.bl.BibsysBridge;
 import edu.brilleslange.bl.Record;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnKeyListener;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -62,12 +66,25 @@ public class SearchScreenActivity extends Activity {
 
 		searchb.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				EditText edittxt = (EditText) findViewById(R.id.entry);
-				String searchValue = edittxt.getText().toString();
-				mProgress.setVisibility(View.VISIBLE);
-				updateSearchResults(searchValue);
+				keyBoardBendOver();
 			}
 		});
+		
+		EditText edittxt = (EditText) findViewById(R.id.entry);
+		edittxt.setOnKeyListener(new OnKeyListener() {
+
+			@Override
+			public boolean onKey(View arg0, int keyCode, KeyEvent kEvent) {
+				if (keyCode == KeyEvent.KEYCODE_ENTER) {
+					keyBoardBendOver();
+					return true;
+				}
+				return false;
+			}
+			
+		});
+		
+		
 
 
 
@@ -78,6 +95,10 @@ public class SearchScreenActivity extends Activity {
 			@Override
 			public void onClick( View v )
 			{
+				EditText searchEditText = (EditText)findViewById(R.id.entry);
+				EditText advancedSearchEditText = (EditText)findViewById(R.id.advancedTextField);
+				String searchS = advancedSearchEditText.getEditableText().toString();
+				searchEditText.setText(searchS);
 				mDrawer.animateClose();
 			}
 		});
@@ -87,8 +108,13 @@ public class SearchScreenActivity extends Activity {
 			@Override
 			public void onClick( View v )
 			{
-				if( !mDrawer.isOpened() )
+				if( !mDrawer.isOpened() ){
 					mDrawer.animateOpen();
+					EditText searchEditText = (EditText)findViewById(R.id.entry);
+					EditText advancedSearchEditText = (EditText)findViewById(R.id.advancedTextField);
+					String searchS = searchEditText.getEditableText().toString();
+					advancedSearchEditText.setText(searchS);
+				}
 			}
 		});
 
@@ -127,10 +153,31 @@ public class SearchScreenActivity extends Activity {
 				
 				searchString += " sortby " + searchByWordsCodes[sortingSpinner.getSelectedItemPosition()];
 				updateSearchResults(searchString);
+				
+				EditText searchEditText = (EditText)findViewById(R.id.entry);
+				EditText advancedSearchEditText = (EditText)findViewById(R.id.advancedTextField);
+				String searchS = advancedSearchEditText.getEditableText().toString();
+				searchEditText.setText(searchS);
+				
+				mDrawer.animateClose();
+				
+				
+				
 			}
 		});	
 
 	}
+	
+	public void keyBoardBendOver() {
+		EditText edittxt = (EditText) findViewById(R.id.entry);
+		String searchValue = edittxt.getText().toString();
+		mProgress.setVisibility(View.VISIBLE);
+		updateSearchResults(searchValue);
+		InputMethodManager imm = (InputMethodManager) getSystemService(
+				INPUT_METHOD_SERVICE);
+		imm.hideSoftInputFromWindow(edittxt.getWindowToken(),0);
+	}
+	
 	@Override
 	public void onContentChanged()
 	{
@@ -150,25 +197,35 @@ public class SearchScreenActivity extends Activity {
 	}
 
 	synchronized void callback(ArrayList<Record> results){
-		this.results = results;
 		l.clear();
+		this.results = results;
 		for(Record r : results){ 
 			l.add(r.title);
 		}
 		handler.sendEmptyMessage(0);
 	}
 
-
+	public void dialogShowYourSelf() {
+		if (results.size() == 0) {
+			String noRezultz = "Ingen resultater";
+			AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+			dialog.setTitle(noRezultz);
+			dialog.setMessage(":'(");
+			dialog.show();
+		} 
+	}
+	
 	private Handler handler = new Handler() {
 		@Override
 		public void  handleMessage(Message msg) {
 			adapt.notifyDataSetChanged();
 			mProgress.setVisibility(View.GONE);
+			dialogShowYourSelf();
 		}};
 
 		// Variable
-		final String[] searchChoice = {"Tittel","Forfatter"};
-		final String[] searchChoiceCodes = {"title","author"};
+		final String[] searchChoice = {"Tittel","Forfatter","ISBN"};
+		final String[] searchChoiceCodes = {"title","author","isbn"};
 		final String[] searchByWords = {"Tittel","Forfatter","Nyeste først","Eldste først"};
 		final String[] searchByWordsCodes = {"title","author","sortdate","sortdate-"};
 		final String[] languages = {"Alle","Norsk bokmål", "Norsk nynorsk", "Engelsk", "Dansk", "Finsk", "Fransk", "Færøysk", "Tysk", "Islandsk", "Italiensk", "Spansk", "Svensk", "Tegnspråk", "Afrikaans", "Albansk", "Amharisk", "Angelsaksisk", "Arabisk", "Armensk", "Aserbajdsjansk", "Bengali", "Bulgarsk", "Egyptisk", "Engelsk (mellomengelsk)", "Esperanto", "Estisk", "Flerspråklig", "Fransk (mellomfransk)", "Frisisk", "Fulfulde", "Georgisk", "Gresk (etter 1453)", "Gresk (fram til 1453)", "Hebraisk", "Hindi", "Indonesisk", "Irsk", "Japansk", "Jiddish", "Kalaalisut (Grønland)", "Katalansk", "Kinesisk", "Koptisk", "Koreansk", "Kroatisk", "Kurdisk", "Latin", "Latvisk", "Litauisk", "Makedonsk", "Nederlandsk (inkl. Flamsk)", "Norsk, gammelnorsk", "Norsk, mellomnorsk", "Panjabi", "Persisk (Farsi)", "Polsk", "Portugisisk", "Pushto", "Romani", "Rumensk", "Russisk", "Samisk, Inarisamisk", "Samisk, Lulesamisk", "Samisk, Nordsamisk", "Samisk, Skoltesamisk", "Samisk, Sørsamisk", "Samisk, andre", "Sanskrit", "Serbisk", "Slovakisk", "Slovensk", "Somali", "Swahili", "Tamil", "Thai", "Tibetansk", "Tsjekkisk", "Tyrkisk", "Ukrainsk", "Ungarsk", "Urdu", "Vietnamesisk", "Zulu"};
