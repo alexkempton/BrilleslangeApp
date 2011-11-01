@@ -172,7 +172,7 @@ public class SearchScreenActivity extends Activity {
 		EditText edittxt = (EditText) findViewById(R.id.entry);
 		String searchValue = edittxt.getText().toString();
 		mProgress.setVisibility(View.VISIBLE);
-		updateSearchResults(searchValue);
+		updateSearchResults("title="+searchValue);
 		InputMethodManager imm = (InputMethodManager) getSystemService(
 				INPUT_METHOD_SERVICE);
 		imm.hideSoftInputFromWindow(edittxt.getWindowToken(),0);
@@ -225,9 +225,9 @@ public class SearchScreenActivity extends Activity {
 
 		// Variable
 		final String[] searchChoice = {"Tittel","Forfatter","ISBN"};
-		final String[] searchChoiceCodes = {"title","author","isbn"};
+		final String[] searchChoiceCodes = {"tittel","forfatter","isbn"};
 		final String[] searchByWords = {"Tittel","Forfatter","Nyeste først","Eldste først"};
-		final String[] searchByWordsCodes = {"title","author","sortdate","sortdate-"};
+		final String[] searchByWordsCodes = {"tittel","forfatter","sortdate","sortdate-"};
 		final String[] languages = {"Alle","Norsk bokmål", "Norsk nynorsk", "Engelsk", "Dansk", "Finsk", "Fransk", "Færøysk", "Tysk", "Islandsk", "Italiensk", "Spansk", "Svensk", "Tegnspråk", "Afrikaans", "Albansk", "Amharisk", "Angelsaksisk", "Arabisk", "Armensk", "Aserbajdsjansk", "Bengali", "Bulgarsk", "Egyptisk", "Engelsk (mellomengelsk)", "Esperanto", "Estisk", "Flerspråklig", "Fransk (mellomfransk)", "Frisisk", "Fulfulde", "Georgisk", "Gresk (etter 1453)", "Gresk (fram til 1453)", "Hebraisk", "Hindi", "Indonesisk", "Irsk", "Japansk", "Jiddish", "Kalaalisut (Grønland)", "Katalansk", "Kinesisk", "Koptisk", "Koreansk", "Kroatisk", "Kurdisk", "Latin", "Latvisk", "Litauisk", "Makedonsk", "Nederlandsk (inkl. Flamsk)", "Norsk, gammelnorsk", "Norsk, mellomnorsk", "Panjabi", "Persisk (Farsi)", "Polsk", "Portugisisk", "Pushto", "Romani", "Rumensk", "Russisk", "Samisk, Inarisamisk", "Samisk, Lulesamisk", "Samisk, Nordsamisk", "Samisk, Skoltesamisk", "Samisk, Sørsamisk", "Samisk, andre", "Sanskrit", "Serbisk", "Slovakisk", "Slovensk", "Somali", "Swahili", "Tamil", "Thai", "Tibetansk", "Tsjekkisk", "Tyrkisk", "Ukrainsk", "Ungarsk", "Urdu", "Vietnamesisk", "Zulu"};
 		final String[] languageCodes = {"all","nob", "nno", "eng", "dan", "fin", "fre", "fao", "ger", "ice", "ita", "spa", "swe", "sgn", "afr", "alb", "amh", "ang", "ara", "arm", "aze", "ben", "bul", "egy", "enm", "epo", "est", "mul", "frm", "fry", "ful", "geo", "gre", "grc", "heb", "hin", "ind", "gle", "jpn", "yid", "kal", "cat", "chi", "cop", "kor", "scr", "kur", "lat", "lav", "lit", "mac", "dut", "non", "nom", "pan", "per", "pol", "por", "pus", "rom", "rum", "rus", "smn" , "smj", "sme", "sms", "sma", "smi", "san", "scc", "slo", "slv", "som", "swa", "tam", "tha", "tib", "cze", "tur", "ukr", "hun", "urd", "vie", "zul"} ;
 		
