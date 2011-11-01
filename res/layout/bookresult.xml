@@ -1,43 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
- android:id="@+id/ScrollView01"
-android:layout_width="fill_parent"
-android:layout_height="fill_parent">
-<LinearLayout 
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#EEEEEE">
-     <TextView
-        android:id="@+id/label1"
-        android:layout_width="fill_parent"
+    android:background="#EEEEEE" >
+
+    <include
+        android:id="@+id/topbar"
         android:layout_height="wrap_content"
-        android:text="Tittel:"/>
- <TextView
-  	  android:id="@+id/bookresulttitletext"
-  	  android:layout_width="fill_parent"
-	  android:layout_height="wrap_content"
-	  android:layout_weight="1" android:layout_gravity="left|center_vertical" android:textSize="20dip" android:layout_marginLeft="10dip"/>
-  <TextView
-        android:id="@+id/label2"
+        layout="@layout/topbar" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/title_sok" />
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ScrollView01"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Forfatter:"/>
- <TextView
-  	  android:id="@+id/bookresultauthortext"
-  	  android:layout_width="fill_parent"
-	  android:layout_height="wrap_content"
-	  android:layout_weight="1" android:layout_gravity="left|center_vertical" android:textSize="20dip" android:layout_marginLeft="10dip"/>
-	   <TextView
-        android:id="@+id/label2"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Plassering:"/>
-	  <TextView
-  	  android:id="@+id/bookresultplacementtext"
-  	  android:layout_width="fill_parent"
-	  android:layout_height="wrap_content"
-	  android:layout_weight="1" android:layout_gravity="left|center_vertical" android:textSize="20dip" android:layout_marginLeft="10dip"/>
-   
-</LinearLayout>
-</ScrollView>
+        android:layout_height="fill_parent" 
+        android:layout_below="@id/topbar">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#EEEEEE"
+            android:orientation="vertical" >
+
+            <!--  
+            <TextView
+                android:id="@+id/label1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Tittel:" />
+-->
+            <TextView
+                android:id="@+id/bookresulttitletext"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginLeft="6dip"
+                android:layout_weight="1"
+                android:textSize="20dip"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/label2"
+                android:layout_below="@id/bookresulttitletext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dip"
+                android:text="Av:"
+                android:layout_margin="6dp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/bookresultauthortext"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:layout_weight="1"
+                android:layout_toRightOf="@id/label2"
+                android:layout_alignTop="@id/label2"
+                android:textSize="20dip"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/label3"
+                android:layout_below="@id/bookresultauthortext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Plassering:"
+                android:textSize="20dp"
+                android:layout_margin="6dp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/bookresultplacementtext"
+                android:layout_below="@id/label3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:layout_weight="1"
+                android:textSize="15dip"
+                android:layout_margin="6dp"
+                android:textColor="#000000" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

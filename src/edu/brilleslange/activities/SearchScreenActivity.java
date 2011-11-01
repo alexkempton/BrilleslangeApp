@@ -43,6 +43,8 @@ public class SearchScreenActivity extends Activity {
 
 	BibsysBridge bibsys = new BibsysBridge();
 	ArrayList<String> l = new ArrayList<String>();
+	ArrayList<String> a = new ArrayList<String>();
+	ArrayList<String> y = new ArrayList<String>();
 	ListView list;
 	ArrayAdapter<String> adapt;
 	ArrayList<Record> results;
@@ -198,9 +200,13 @@ public class SearchScreenActivity extends Activity {
 
 	synchronized void callback(ArrayList<Record> results){
 		l.clear();
+		a.clear();
+		y.clear();
 		this.results = results;
 		for(Record r : results){ 
 			l.add(r.title);
+			a.add(r.author);
+			//y.add(r.year);
 		}
 		handler.sendEmptyMessage(0);
 	}

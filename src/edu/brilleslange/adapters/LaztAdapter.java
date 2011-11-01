@@ -21,18 +21,18 @@ public class LaztAdapter extends BaseAdapter {
     public LaztAdapter(Activity a) {
         activity = a;
         inflater = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        data[0] = R.drawable.bbk;
-        data[1] = R.drawable.document;
-        data[2] = R.drawable.facebookv2;
+        data[0] = R.drawable.search;
+        data[1] = R.drawable.bbk;
+        data[2] = R.drawable.document;
+        data[3] = R.drawable.facebookv2;
         //data[3] = R.drawable.map;
-        data[3] = R.drawable.search;
         data[4] = R.drawable.twitter;
-        menuTxt[0] = "Bestill en bibliotekar";
-        menuTxt[1] = "Ukens artikkel";
-        menuTxt[2] = "Hva skjer på biblioteket?";
+        menuTxt[0] = "Søk etter litteratur";
+        menuTxt[1] = "Bestill en bibliotekar";
+        menuTxt[2] = "Ukens artikkel";
+        menuTxt[3] = "Hva skjer på biblioteket?";
         //menuTxt[3] = "Finn i bygget";
-        menuTxt[3] = "Søk etter litteratur";
-        menuTxt[4] = "#Realfagsbiblioteket";
+        menuTxt[4] = "#RFbiblioteket";
     }
 
     public int getCount() {

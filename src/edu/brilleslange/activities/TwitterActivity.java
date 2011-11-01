@@ -36,7 +36,7 @@ public class TwitterActivity  extends Activity {
 		HttpClient httpclient = new DefaultHttpClient();
 		String[] tweets = null;
 		try {
-			HttpGet httpget = new HttpGet("http://search.twitter.com/search.json?q=realfagsbibliotek&result_type=mixed&count=5");
+			HttpGet httpget = new HttpGet("http://search.twitter.com/search.json?q=rfbibliotek&result_type=mixed&count=5");
 			ResponseHandler<String> responseHandler = new BasicResponseHandler();
 			String responseBody = httpclient.execute(httpget, responseHandler);
 

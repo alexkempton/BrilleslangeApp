@@ -84,11 +84,11 @@ public class FrontPageActivity extends MapActivity {
 		
 
 		final Class[] activitados = {
+				SearchScreenActivity.class,
 				BookALibrarianActivity.class,
 				ArticleOfTheWeekActivity.class,
 				FacebookActivity.class,
 				//BuildingPlanActivity.class,
-				SearchScreenActivity.class,
 				TwitterActivity.class
 		};
 
